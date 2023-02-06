@@ -12,6 +12,11 @@ const songSlice = createSlice({
       state.splice(index, 1);
     },
   },
+  extraReducers(builder) {
+    builder.addCase("video/resetVideo", () => {
+      return [];
+    });
+  },
 });
 
 const videSlice = createSlice({
@@ -25,6 +30,9 @@ const videSlice = createSlice({
       const index = state.indexOf(action.payload);
       state.splice(index, 1);
     },
+    resetVideo() {
+      return [];
+    },
   },
 });
 
@@ -37,5 +45,5 @@ const store = configureStore({
 
 export { store };
 
-export const { addSong, reomoveSong } = songSlice.actions;
-export const { addVideo, removeVideo } = videSlice.actions;
+export const { addSong, reomoveSong, resetSong } = songSlice.actions;
+export const { addVideo, removeVideo, resetVideo } = videSlice.actions;
