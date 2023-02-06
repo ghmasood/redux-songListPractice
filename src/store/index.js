@@ -7,7 +7,10 @@ const songSlice = createSlice({
     addSong(state, action) {
       state.push(action.payload);
     },
-    reomoveSong(state, action) {},
+    reomoveSong(state, action) {
+      const index = state.indexOf(action.payload);
+      state.splice(index, 1);
+    },
   },
 });
 
@@ -19,4 +22,4 @@ const store = configureStore({
 
 export { store };
 
-export const { addSong } = songSlice.actions;
+export const { addSong, reomoveSong } = songSlice.actions;
