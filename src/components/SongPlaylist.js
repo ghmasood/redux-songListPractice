@@ -4,8 +4,6 @@ import { addSong, reomoveSong } from "../store";
 
 function SongPlaylist() {
   const dispatch = useDispatch();
-  // To Do:
-  // Get list of songs
   const songPlaylist = useSelector((state) => state.songs);
   const handleSongAdd = (song) => {
     dispatch(addSong(song));
